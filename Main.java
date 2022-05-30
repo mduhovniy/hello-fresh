@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -15,15 +14,12 @@ public class Main {
     }
 
     private static String sort(String input) {
-
         return input.chars() // Convert to an IntStream
                 .mapToObj(i -> (char) i).sorted(new ComplexComparator())
-                .map(String::valueOf)   // Stream<String>
-                .collect(Collectors.joining());
+                .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
     }
 
     static class ComplexComparator implements Comparator<Character> {
-
         @Override
         public int compare(Character a, Character b) {
             if (Character.isLetter(a) && Character.isDigit(b)) {
