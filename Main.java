@@ -36,15 +36,14 @@ public class Main {
                 } else if (Character.isLowerCase(a) && Character.isUpperCase(b)) {
                     return 1;
                 }
-                return a - b;
             } else {
                 if (a % 2 == 0 && b % 2 != 0) {
                     return -1;
                 } else if (a % 2 != 0 && b % 2 == 0) {
                     return 1;
                 }
-                return a - b;
             }
+            return a - b;
         }
     }
 }
