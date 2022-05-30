@@ -8,9 +8,7 @@ public class Main {
     // [A-Za-z0-9]
 
     public static void main(String... args) {
-        for (String input : args) {
-            System.out.println(sort(input));
-        }
+        Arrays.stream(args).map(Main::sort).forEach(System.out::println);
     }
 
     private static String sort(String input) {
